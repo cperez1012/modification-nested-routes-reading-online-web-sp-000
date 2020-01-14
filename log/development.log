@@ -3815,3 +3815,43 @@ Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2020-01-13 00:00:00"], ["updated_at", "2020-01-14 22:08:35.641623"], ["id", 16]]
   [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 67.245.91.138 at 2020-01-14 22:11:15 +0000
+Cannot render console from 67.245.91.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors" for 67.245.91.138 at 2020-01-14 22:11:21 +0000
+Cannot render console from 67.245.91.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 753ms (Views: 746.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors/4" for 67.245.91.138 at 2020-01-14 22:11:30 +0000
+Cannot render console from 67.245.91.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
+  Rendered authors/show.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 100ms (Views: 93.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/authors/4/posts/new" for 67.245.91.138 at 2020-01-14 22:12:09 +0000
+Cannot render console from 67.245.91.138! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (21.1ms)
+  Rendered posts/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
